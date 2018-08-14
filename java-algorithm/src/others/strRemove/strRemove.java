@@ -8,16 +8,18 @@ public class strRemove {
         String s1 = "ACCAABBC"; // "AC"
         String s2 = "ABCBBCBA"; // ""
         String s3 = "BABABA"; // "BABABA"
+        System.out.println("result : " + Solution(s1));
+        System.out.println("result : " + Solution(s2));
         System.out.println("result : " + Solution(s3));
     }
 
     static String Solution(String S) {
-        String[] copyS = S.split("");
+        final String[] copyS = S.split("");
         List<String> arrayStr = new ArrayList<>();
         for (int i = 0; i < copyS.length; i++) {
             arrayStr.add(copyS[i]);
         }
-        String result = "";
+        StringBuilder result = new StringBuilder();
 
         int index = 0;
         int maxIndex = arrayStr.size() - 1;
@@ -41,9 +43,9 @@ public class strRemove {
         final int size = arrayStr.size();
         if (!arrayStr.isEmpty()) {
             for (int i = 0; i < size; i++) {
-                result += arrayStr.get(i);
+                result.append(arrayStr.get(i));
             }
         }
-        return result;
+        return String.valueOf(result);
     }
 }
