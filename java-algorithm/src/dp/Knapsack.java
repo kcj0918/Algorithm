@@ -1,9 +1,5 @@
 package dp;
 
-/*
-    참고 url : http://blog.daum.net/rhaoslikesan/287
-    Problem source :
- */
 public class Knapsack {
     public static void main(String[] args) {
         final int[] weight = {3, 4, 1, 2, 3};
@@ -22,7 +18,7 @@ public class Knapsack {
         for (int i = 1; i < val.length; i++) {
             val[i] = value[i - 1];
         }
-        int[][] V = new int[N+1][W+1];
+        int[][] V = new int[N + 1][W + 1];
         return knapsack(N, W, wt, val, V);
     }
 
@@ -35,6 +31,12 @@ public class Knapsack {
                     result[i][j] = result[i - 1][j];
                 }
             }
+        }
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < W; j++) {
+                System.out.print(result[i][j] + " ");
+            }
+            System.out.println();
         }
         return result[N][W];
     }
